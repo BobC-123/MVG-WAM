@@ -29,8 +29,21 @@
       <h1 id="title">MVG<span>–</span><wbr>WAM</h1>
       <p class="hero-thesis">One world.<br><em>Every view.</em></p>
       <p class="paper-title">Multiple View Geometry-Aware World-Action Modeling for Robotic Manipulation</p>
-      <p class="authors">Anonymous Authors</p>
-      <div class="hero-actions"><a class="button primary" href="#demos"><span class="play-icon" aria-hidden="true"></span> Watch the robot</a><a class="button outline" href="assets/MVG-WAM.pdf" target="_blank" rel="noopener">Paper PDF</a></div>
+      <div class="authors" aria-label="Authors">
+        <span>Wenbo Chen<sup>1,*</sup></span>
+        <span>Tianfu Li<sup>1,*</sup></span>
+        <span>Haoxuan Xu<sup>2,*</sup></span>
+        <span>Zhihao Cao<sup>3</sup></span>
+        <span>Zhenghan Chen<sup>4</sup></span>
+        <span>Zhengming Zhu<sup>5</sup></span>
+        <span>Zizhou Luo<sup>6</sup></span>
+        <span>Guosheng Yang<sup>1</sup></span>
+        <span>Yuan Liu<sup>2</sup></span>
+        <span>Lujia Wang<sup>1</sup></span>
+        <span>Wen Chen<sup>1</sup></span>
+        <span>Haoang Li<sup>1</sup></span>
+      </div>
+      <div class="hero-actions"><a class="button primary" href="#demos"><span class="play-icon" aria-hidden="true"></span> Watch the robot</a><a class="button outline" href="assets/MVG-WAM.pdf" target="_blank" rel="noopener">Paper PDF</a><a class="button outline code-link" href="https://github.com/BobC-123/MVG-WAM" target="_blank" rel="noopener">Code <span>Coming soon</span></a></div>
       <p class="hero-footnote">Explicit multi-view geometry.<br> No additional embodied pretraining.</p>
     </div>
     <div class="hero-media">
@@ -46,6 +59,17 @@
         <figure><img src="assets/images/poster-04.webp" width="640" height="480" alt="Right wrist camera observes the radish near the gripper"><figcaption><span>03</span> Right wrist</figcaption></figure>
       </div>
       <div class="hero-caption"><span>Different perspectives. A shared physical world.</span><button class="text-button" id="motion-toggle" aria-pressed="false">Pause motion</button></div>
+    </div>
+    <div class="research-credits">
+      <div class="affiliations" aria-label="Author affiliations">
+        <p><sup>1</sup> The Hong Kong University of Science and Technology (Guangzhou)</p>
+        <p><sup>2</sup> The Hong Kong University of Science and Technology</p>
+        <p><sup>3</sup> ETH Zurich</p>
+        <p><sup>4</sup> Zhejiang University</p>
+        <p><sup>5</sup> EPFL</p>
+        <p><sup>6</sup> University of Zurich</p>
+      </div>
+      <p class="equal-contribution">* Wenbo Chen, Tianfu Li, and Haoxuan Xu contributed equally to this work.</p>
     </div>
   </section>
 
@@ -105,10 +129,13 @@
     <div class="prediction-layout"><figure><button class="figure-button" data-figure="prediction" aria-label="Enlarge the prediction comparison"><img src="assets/images/prediction.webp" loading="lazy" width="1800" height="1195" alt="Clean and randomized RoboTwin examples compare future ground truth, FastWAM-Joint prediction, and MVG-WAM prediction, with gripper-object interaction regions enlarged."><span>Inspect predictions <span aria-hidden="true">＋</span></span></button><figcaption>Both models use the same current observation and are compared with the same future target.</figcaption></figure><div class="diagnostics"><article><span>RGB PREDICTION / PSNR</span><strong>31.79 <small>dB</small></strong><p>+3.74 dB over FastWAM-Joint</p></article><article><span>STRUCTURAL SIMILARITY / SSIM</span><strong>0.914</strong><p>Compared with 0.842 for FastWAM-Joint</p></article><article><span>TEACHER-FORCED DEPTH / MAE</span><strong>2.12 <small>cm</small></strong><p>Metric information retained in the denoising representation</p></article><p class="source-note">625 clips from 125 validation trajectories. Depth readout uses noisy future target latents and is a representation diagnostic, not current-observation-only depth forecasting.</p></div></div>
   </div></section>
 
-  <section class="section wrap resources-section" id="resources"><div class="resource-intro"><p class="eyebrow">05 / EXPLORE THE WORK</p><h2>A shared world.<br><em>A new perspective.</em></h2><p>Read the complete method, evaluation protocols, and analysis in the manuscript.</p><div class="hero-actions"><a class="button primary" href="assets/MVG-WAM.pdf" target="_blank" rel="noopener">Read the paper</a><a class="button outline" href="https://github.com/BobC-123/MVG-WAM" target="_blank" rel="noopener">Project repository</a></div></div><div class="citation"><div class="citation-head"><h3>Citation</h3><button class="small-button" id="copy-citation">Copy BibTeX</button></div><p>Anonymous manuscript · author information pending.</p><pre id="bibtex">@misc{mvgwam,
+  <section class="section wrap resources-section" id="resources"><div class="resource-intro"><p class="eyebrow">05 / EXPLORE THE WORK</p><h2>A shared world.<br><em>A new perspective.</em></h2><p>Read the complete method, evaluation protocols, and analysis in the manuscript.</p><div class="hero-actions"><a class="button primary" href="assets/MVG-WAM.pdf" target="_blank" rel="noopener">Read the paper</a><a class="button outline code-link" href="https://github.com/BobC-123/MVG-WAM" target="_blank" rel="noopener">Code <span>Coming soon</span></a></div><p class="release-note">The code will be released in the project repository.</p></div><div class="citation"><div class="citation-head"><h3>Citation</h3><button class="small-button" id="copy-citation">Copy BibTeX</button></div><p>Manuscript citation.</p><pre id="bibtex">@misc{mvgwam,
   title = {MVG-WAM: Multiple View Geometry-Aware
            World-Action Modeling for Robotic Manipulation},
-  author = {{Anonymous Authors}},
+  author = {Chen, Wenbo and Li, Tianfu and Xu, Haoxuan
+            and Cao, Zhihao and Chen, Zhenghan and Zhu, Zhengming
+            and Luo, Zizhou and Yang, Guosheng and Liu, Yuan
+            and Wang, Lujia and Chen, Wen and Li, Haoang},
   note = {Manuscript},
   url = {https://bobc-123.github.io/MVG-WAM/}
 }</pre><p id="copy-status" class="copy-status" role="status" aria-live="polite"></p></div></section>

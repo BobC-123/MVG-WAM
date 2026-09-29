@@ -49,4 +49,4 @@ The simulation task names are not supplied in the slide text. The page uses numb
 - `prediction.webp` is rendered from the final `figures/4.7.pdf`.
 - Older figure iterations remain in the original source directory and are not served by this site.
 
-The author list is anonymous in the supplied manuscript. This page does not assert a publication year, acceptance, arXiv identifier, or a released model/code package.
+The supplied PDF remains anonymous. The public webpage, citation, and repository README use the author list and affiliations supplied by the project owner on 2026-09-29. The code release is announced as forthcoming; this page does not assert a publication year, acceptance, arXiv identifier, or an already released model/code package.
