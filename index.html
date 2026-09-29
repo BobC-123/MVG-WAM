@@ -1,24 +1,119 @@
-<!DOCTYPE html>
-
+<!doctype html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>MVG-WAM</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>MVG-WAM · Multiple View Geometry-Aware World-Action Modeling</title>
+  <meta name="description" content="MVG-WAM connects multiple camera views through explicit geometry for robotic manipulation. Explore 33 video clips, real-world demonstrations, and results on LIBERO and RoboTwin 2.0.">
+  <meta name="theme-color" content="#111512">
+  <link rel="canonical" href="https://bobc-123.github.io/MVG-WAM/">
+  <meta property="og:title" content="MVG-WAM · One world. Every view.">
+  <meta property="og:description" content="Multiple View Geometry-Aware World-Action Modeling for Robotic Manipulation. Real robots, multiple perspectives, geometry-aware control.">
+  <meta property="og:url" content="https://bobc-123.github.io/MVG-WAM/">
+  <meta property="og:type" content="website">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23111512'/%3E%3Cpath d='M12 44V20l20 18 20-18v24' fill='none' stroke='%23ff9466' stroke-width='7' stroke-linejoin='round'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="style.css">
+  <script src="app.js" defer></script>
 </head>
-
 <body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="header">
+  <a class="brand" href="#main" aria-label="MVG-WAM home"><svg viewBox="0 0 32 26" aria-hidden="true"><path d="M2 23V3l14 13L30 3v20"/></svg><span>MVG<span class="brand-dash">/</span>WAM</span></a>
+  <nav aria-label="Main navigation"><a href="#demos">In action</a><a href="#method">The geometry</a><a href="#experiments">Experiments</a><a href="#resources">Resources</a></nav>
+  <a class="header-paper" href="assets/MVG-WAM.pdf" target="_blank" rel="noopener">Read the paper <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M5 2h7l3 3v13H5zM11 2v5h4M8 10h4M8 13h4"/></svg></a>
+</header>
+<main id="main">
+  <section class="hero wrap" aria-labelledby="title">
+    <div class="hero-copy">
+      <p class="eyebrow"><span class="tiny-cross" aria-hidden="true">+</span> GEOMETRY-AWARE ROBOT LEARNING</p>
+      <h1 id="title">MVG<span>–</span><wbr>WAM</h1>
+      <p class="hero-thesis">One world.<br><em>Every view.</em></p>
+      <p class="paper-title">Multiple View Geometry-Aware World-Action Modeling for Robotic Manipulation</p>
+      <p class="authors">Anonymous Authors</p>
+      <div class="hero-actions"><a class="button primary" href="#demos"><span class="play-icon" aria-hidden="true"></span> Watch the robot</a><a class="button outline" href="assets/MVG-WAM.pdf" target="_blank" rel="noopener">Paper PDF</a></div>
+      <p class="hero-footnote">Explicit multi-view geometry.<br> No additional embodied pretraining.</p>
+    </div>
+    <div class="hero-media">
+      <div class="view-header"><span>FIELD NOTES / 001</span><span>COBOT MAGIC</span></div>
+      <div class="hero-main media-shell">
+        <video id="hero-video" src="assets/videos/07.mp4" poster="assets/images/poster-07.webp" muted loop playsinline preload="metadata" controls aria-label="Radish-to-plate, external recording, presented at 3 times speed"></video>
+        <div class="video-label"><span>EXTERNAL VIEW</span><span>3×</span></div>
+      </div>
+      <div class="view-connectors" aria-hidden="true"><span></span><span></span><span></span></div>
+      <div class="hero-views">
+        <figure><img src="assets/images/poster-06.webp" width="640" height="480" alt="Scene camera observes the plate and radish"><figcaption><span>01</span> Scene</figcaption></figure>
+        <figure><img src="assets/images/poster-05.webp" width="640" height="480" alt="Left wrist camera observation"><figcaption><span>02</span> Left wrist</figcaption></figure>
+        <figure><img src="assets/images/poster-04.webp" width="640" height="480" alt="Right wrist camera observes the radish near the gripper"><figcaption><span>03</span> Right wrist</figcaption></figure>
+      </div>
+      <div class="hero-caption"><span>Different perspectives. A shared physical world.</span><button class="text-button" id="motion-toggle" aria-pressed="false">Pause motion</button></div>
+    </div>
+  </section>
 
-    <h1>MVG-WAM</h1>
+  <section class="results-strip wrap" aria-label="Reported average success rates">
+    <div class="strip-intro"><span class="eyebrow">MEASURED IN ACTION</span><p>Geometry that<br>makes a difference.</p></div>
+    <div><strong>99.1<span>%</span></strong><p>LIBERO</p><small>40 tasks · average success</small></div>
+    <div><strong>92.07<span>%</span></strong><p>RoboTwin 2.0</p><small>50 tasks · average success</small></div>
+    <div><strong>91.3<span>%</span></strong><p>Real world</p><small>137 / 150 successful trials</small></div>
+  </section>
 
-    <h2>Multi-View Geometry-Aware World Action Model</h2>
+  <section class="section wrap real-section" id="demos" aria-labelledby="demos-title">
+    <div class="section-heading"><div><p class="eyebrow">01 / IN THE REAL WORLD</p><h2 id="demos-title">See the whole scene.<br><em>Get the details right.</em></h2></div><p class="section-deck">Grasping, precise alignment, and multi-stage interaction on a dual-arm Cobot Magic. One policy, three tasks.</p></div>
+    <div class="task-tabs" role="tablist" aria-label="Real-world manipulation tasks">
+      <button role="tab" id="task-radish" aria-selected="true" aria-controls="real-panel" data-task="radish"><span class="tab-number">01</span><span>Radish to plate<small>Grasp & place</small></span><b>96<small>%</small></b></button>
+      <button role="tab" id="task-cups" aria-selected="false" aria-controls="real-panel" tabindex="-1" data-task="cups"><span class="tab-number">02</span><span>Cup stacking<small>Precise alignment</small></span><b>90<small>%</small></b></button>
+      <button role="tab" id="task-pot" aria-selected="false" aria-controls="real-panel" tabindex="-1" data-task="pot"><span class="tab-number">03</span><span>Open pot & place pepper<small>Multi-stage interaction</small></span><b>88<small>%</small></b></button>
+    </div>
+    <div id="real-panel" role="tabpanel" aria-labelledby="task-radish" tabindex="0"></div>
+    <div class="demo-toolbar"><p id="task-description">Pick up the radish and place it on the plate.</p><div><span class="speed-label">3× AS PRESENTED</span><button id="restart-real" class="small-button">Replay all views</button></div></div>
+    <p class="source-note">50 evaluation trials per task. The external recording is separate from the three camera observations supplied to the policy. Videos show selected successful executions.</p>
+    <noscript><p>Enable JavaScript to explore every camera view. <a href="assets/videos/07.mp4">Radish to plate</a> · <a href="assets/videos/11.mp4">Cup stacking</a> · <a href="assets/videos/15.mp4">Pot opening and pepper placement</a></p></noscript>
+    <div class="comparison-heading"><div><p class="eyebrow">A CLOSER LOOK</p><h3>Where interaction succeeds.</h3></div><p>Selected successes and failure cases.<br><span>10× speed as presented in the source demos.</span></p></div>
+    <div class="real-comparisons" id="real-comparisons"></div>
+    <p class="source-note">These are representative rollouts, not matched initial-state tests. The reported overall success rates use the same 150-trial evaluation protocol: MVG-WAM 91.3%, FastWAM-Joint 78.7%, π<sub>0.5</sub> 89.3%, and MVG-WAM without the epipolar residual 87.3%.</p>
+  </section>
 
-    <p>
-        Official project page.
-    </p>
+  <section class="method-section" id="method" aria-labelledby="method-title">
+    <div class="wrap section">
+      <div class="section-heading"><div><p class="eyebrow">02 / THE GEOMETRY BEHIND THE ACTION</p><h2 id="method-title">Multiple cameras.<br><em>One representation.</em></h2></div><p class="section-deck">Synchronized observations are projections of the same physical world. MVG-WAM makes those geometric relationships explicit inside a world–action model.</p></div>
+      <div class="concept-grid">
+        <div class="concept-visual"><div class="concept-views" id="concept-views"></div><div class="geometry-equation"><span>p′<sup>T</sup> F p = 0</span><p>Cross-view correspondences<br>constrained by calibrated geometry</p></div></div>
+        <div class="method-steps">
+          <article><span>01</span><div><h3>Connect the views</h3><p>Epipolar-constrained retrieval aggregates dense DINOv3 features into a global state, linking geometrically admissible observations across cameras.</p></div></article>
+          <article><span>02</span><div><h3>Keep each camera’s context</h3><p>Jointly encoded VGGT-Ω registers provide view-indexed geometric states. Camera-aware routing supplies each video region with its matching context.</p></div></article>
+          <article><span>03</span><div><h3>Ground the future in scale</h3><p>Multi-horizon metric-depth supervision grounds the video representation during training. The depth decoder is removed during action rollout.</p></div></article>
+        </div>
+      </div>
+      <figure class="architecture-figure"><button class="figure-button" data-figure="architecture" aria-label="Enlarge the MVG-WAM architecture diagram"><img src="assets/images/architecture.webp" width="2200" height="979" loading="lazy" alt="MVG-WAM architecture: epipolar global state and view-indexed geometric conditioning guide a video-action diffusion transformer; future metric-depth supervision is used only during training."><span>Enlarge diagram <span aria-hidden="true">＋</span></span></button><figcaption>The global and per-view geometric states condition the video stream. Action tokens access the geometry-enhanced representation through mixed attention.</figcaption></figure>
+      <div class="inference-note"><span class="eyebrow">AT DEPLOYMENT</span><p>RGB + language + proprioception + camera calibration</p><span class="inference-output">Action sequence</span><small>Geometry is encoded once per observation and reused across denoising steps. No depth decoding during control.</small></div>
+      <details class="abstract"><summary>Read the full abstract<span aria-hidden="true">＋</span></summary><p>World–Action Models (WAMs) couple visual dynamics with action prediction, bringing the rich priors of pretrained video models to robotic manipulation. However, their multi-view interfaces typically tile images or concatenate tokens, leaving the geometric relationships among synchronized cameras implicit. This makes it harder to connect global scene context with the local geometry required for interaction. We introduce the Multi-View Geometry-Aware World–Action Model (MVG-WAM), which organizes these observations as related projections of one physical world rather than separate images on a canvas. Our model combines an epipolar-constrained global state with view-indexed geometric states jointly inferred from synchronized observations. Camera-aware routing supplies each video region with its corresponding geometric context and the shared global state, explicitly structuring the representation used for action prediction. We further ground the geometry-aware representation in metric scale through multi-horizon future-depth supervision, without requiring depth decoding during action rollout. MVG-WAM achieves average success rates of 99.1% on LIBERO and 92.07% on RoboTwin 2.0, demonstrating competitive performance across both benchmarks. Real-world experiments on Cobot Magic further demonstrate a 91.3% success rate across 150 trials spanning three manipulation tasks.</p></details>
+    </div>
+  </section>
 
+  <section class="section wrap" id="experiments" aria-labelledby="experiments-title">
+    <div class="section-heading"><div><p class="eyebrow">03 / INSIDE THE SIMULATOR</p><h2 id="experiments-title">More tasks.<br><em>More perspectives.</em></h2></div><p class="section-deck">Explore six paired demonstrations from RoboTwin 2.0 and LIBERO. Each pair shows MVG-WAM alongside FastWAM-Joint.</p></div>
+    <div class="gallery-controls"><div class="filter-group" role="group" aria-label="Filter simulation demos"><button aria-pressed="true" data-filter="all">All demos <span>6</span></button><button aria-pressed="false" data-filter="robotwin">RoboTwin 2.0 <span>4</span></button><button aria-pressed="false" data-filter="libero">LIBERO <span>2</span></button></div><span class="speed-label">10× AS PRESENTED</span></div>
+    <div class="simulation-grid" id="simulation-grid"></div>
+    <p class="source-note">Selected examples illustrate successful MVG-WAM rollouts and baseline failures from the presentation. Quantitative results below summarize the full benchmark evaluation.</p>
+
+    <div class="quant-heading"><p class="eyebrow">THE FULL PICTURE</p><h3>Performance across benchmarks.</h3><p>Success rates (%) reported in the paper. Additional embodied pretraining is shown separately.</p></div>
+    <div class="result-tabs" role="tablist" aria-label="Benchmark data"><button id="result-tab-standard" role="tab" aria-selected="true" aria-controls="result-panel" data-result="standard">Standard benchmarks</button><button id="result-tab-ood" role="tab" aria-selected="false" aria-controls="result-panel" tabindex="-1" data-result="ood">Distribution shifts</button><button id="result-tab-ablation" role="tab" aria-selected="false" aria-controls="result-panel" tabindex="-1" data-result="ablation">Ablations</button><button id="result-tab-real" role="tab" aria-selected="false" aria-controls="result-panel" tabindex="-1" data-result="real">Real-world results</button></div>
+    <div id="result-panel" class="result-panel" role="tabpanel" aria-labelledby="result-tab-standard" tabindex="0"></div>
+  </section>
+
+  <section class="analysis-section"><div class="section wrap">
+    <div class="section-heading"><div><p class="eyebrow">04 / WHAT THE MODEL LEARNS</p><h2>Geometry at the<br><em>point of contact.</em></h2></div><p class="section-deck">Short-horizon predictions preserve sharper object boundaries and more coherent gripper–object geometry in the paper’s qualitative examples.</p></div>
+    <div class="prediction-layout"><figure><button class="figure-button" data-figure="prediction" aria-label="Enlarge the prediction comparison"><img src="assets/images/prediction.webp" loading="lazy" width="1800" height="1195" alt="Clean and randomized RoboTwin examples compare future ground truth, FastWAM-Joint prediction, and MVG-WAM prediction, with gripper-object interaction regions enlarged."><span>Inspect predictions <span aria-hidden="true">＋</span></span></button><figcaption>Both models use the same current observation and are compared with the same future target.</figcaption></figure><div class="diagnostics"><article><span>RGB PREDICTION / PSNR</span><strong>31.79 <small>dB</small></strong><p>+3.74 dB over FastWAM-Joint</p></article><article><span>STRUCTURAL SIMILARITY / SSIM</span><strong>0.914</strong><p>Compared with 0.842 for FastWAM-Joint</p></article><article><span>TEACHER-FORCED DEPTH / MAE</span><strong>2.12 <small>cm</small></strong><p>Metric information retained in the denoising representation</p></article><p class="source-note">625 clips from 125 validation trajectories. Depth readout uses noisy future target latents and is a representation diagnostic, not current-observation-only depth forecasting.</p></div></div>
+  </div></section>
+
+  <section class="section wrap resources-section" id="resources"><div class="resource-intro"><p class="eyebrow">05 / EXPLORE THE WORK</p><h2>A shared world.<br><em>A new perspective.</em></h2><p>Read the complete method, evaluation protocols, and analysis in the manuscript.</p><div class="hero-actions"><a class="button primary" href="assets/MVG-WAM.pdf" target="_blank" rel="noopener">Read the paper</a><a class="button outline" href="https://github.com/BobC-123/MVG-WAM" target="_blank" rel="noopener">Project repository</a></div></div><div class="citation"><div class="citation-head"><h3>Citation</h3><button class="small-button" id="copy-citation">Copy BibTeX</button></div><p>Anonymous manuscript · author information pending.</p><pre id="bibtex">@misc{mvgwam,
+  title = {MVG-WAM: Multiple View Geometry-Aware
+           World-Action Modeling for Robotic Manipulation},
+  author = {{Anonymous Authors}},
+  note = {Manuscript},
+  url = {https://bobc-123.github.io/MVG-WAM/}
+}</pre><p id="copy-status" class="copy-status" role="status" aria-live="polite"></p></div></section>
+</main>
+<footer class="footer wrap"><a class="brand" href="#main">MVG<span class="brand-dash">/</span>WAM</a><p>Multiple views. Shared geometry. Robotic action.</p><a href="#main">Back to top</a></footer>
+<dialog id="viewer" aria-labelledby="viewer-title"><div class="viewer-top"><h2 id="viewer-title">Demo</h2><button class="close-viewer" aria-label="Close viewer">×</button></div><div id="viewer-content"></div></dialog>
 </body>
-
 </html>
