@@ -20,7 +20,7 @@
 <header class="header">
   <a class="brand" href="#main" aria-label="MVG-WAM home"><svg viewBox="0 0 32 26" aria-hidden="true"><path d="M2 23V3l14 13L30 3v20"/></svg><span>MVG<span class="brand-dash">-</span>WAM</span></a>
   <nav aria-label="Main navigation"><a href="#demos">In action</a><a href="#method">The geometry</a><a href="#experiments">Experiments</a><a href="#resources">Resources</a></nav>
-  <a class="header-paper" href="assets/MVG-WAM.pdf" target="_blank" rel="noopener">Read the paper <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M5 2h7l3 3v13H5zM11 2v5h4M8 10h4M8 13h4"/></svg></a>
+  <a class="header-paper" href="https://arxiv.org/pdf/2609.37793" target="_blank" rel="noopener">Read the paper <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M5 2h7l3 3v13H5zM11 2v5h4M8 10h4M8 13h4"/></svg></a>
 </header>
 <main id="main">
   <section class="hero wrap" aria-labelledby="title">
@@ -43,7 +43,7 @@
         <span>Wen Chen<sup>1</sup></span>
         <span>Haoang Li<sup>1</sup></span>
       </div>
-      <div class="hero-actions"><a class="button primary" href="#demos"><span class="play-icon" aria-hidden="true"></span> Watch the robot</a><a class="button outline" href="assets/MVG-WAM.pdf" target="_blank" rel="noopener">Paper PDF</a><a class="button outline code-link" href="https://github.com/BobC-123/MVG-WAM" target="_blank" rel="noopener">Code</a></div>
+      <div class="hero-actions"><a class="button primary" href="#demos"><span class="play-icon" aria-hidden="true"></span> Watch the robot</a><a class="button outline" href="https://arxiv.org/pdf/2609.37793" target="_blank" rel="noopener">Paper PDF</a><a class="button outline" href="https://arxiv.org/abs/2609.37793" target="_blank" rel="noopener">arXiv</a><a class="button outline code-link" href="https://github.com/BobC-123/MVG-WAM" target="_blank" rel="noopener">Code</a></div>
       <p class="hero-footnote">Explicit multi-view geometry.<br> No additional embodied pretraining.</p>
     </div>
     <div class="hero-media">
@@ -129,15 +129,18 @@
     <div class="prediction-layout"><figure><button class="figure-button" data-figure="prediction" aria-label="Enlarge the prediction comparison"><img src="assets/images/prediction.webp" loading="lazy" width="1800" height="1195" alt="Clean and randomized RoboTwin examples compare future ground truth, FastWAM-Joint prediction, and MVG-WAM prediction, with gripper-object interaction regions enlarged."><span>Inspect predictions <span aria-hidden="true">＋</span></span></button><figcaption>Both models use the same current observation and are compared with the same future target.</figcaption></figure><div class="diagnostics"><article><span>RGB PREDICTION / PSNR</span><strong>31.79 <small>dB</small></strong><p>+3.74 dB over FastWAM-Joint</p></article><article><span>STRUCTURAL SIMILARITY / SSIM</span><strong>0.914</strong><p>Compared with 0.842 for FastWAM-Joint</p></article><article><span>TEACHER-FORCED DEPTH / MAE</span><strong>2.12 <small>cm</small></strong><p>Metric information retained in the denoising representation</p></article><p class="source-note">625 clips from 125 validation trajectories. Depth readout uses noisy future target latents and is a representation diagnostic, not current-observation-only depth forecasting.</p></div></div>
   </div></section>
 
-  <section class="section wrap resources-section" id="resources"><div class="resource-intro"><p class="eyebrow">05 / EXPLORE THE WORK</p><h2>A shared world.<br><em>A new perspective.</em></h2><p>Read the complete method, evaluation protocols, and analysis in the manuscript.</p><div class="hero-actions"><a class="button primary" href="assets/MVG-WAM.pdf" target="_blank" rel="noopener">Read the paper</a><a class="button outline code-link" href="https://github.com/BobC-123/MVG-WAM" target="_blank" rel="noopener">Code</a></div><p class="release-note">The code will be released in the project repository.</p></div><div class="citation"><div class="citation-head"><h3>Citation</h3><button class="small-button" id="copy-citation">Copy BibTeX</button></div><p>Manuscript citation.</p><pre id="bibtex">@misc{mvgwam,
+  <section class="section wrap resources-section" id="resources"><div class="resource-intro"><p class="eyebrow">05 / EXPLORE THE WORK</p><h2>A shared world.<br><em>A new perspective.</em></h2><p>Read the complete method, evaluation protocols, and analysis in the arXiv preprint.</p><div class="hero-actions"><a class="button primary" href="https://arxiv.org/pdf/2609.37793" target="_blank" rel="noopener">Read the paper</a><a class="button outline" href="https://arxiv.org/abs/2609.37793" target="_blank" rel="noopener">arXiv</a><a class="button outline code-link" href="https://github.com/BobC-123/MVG-WAM" target="_blank" rel="noopener">Code</a></div><p class="release-note">The code will be released in the project repository.</p></div><div class="citation"><div class="citation-head"><h3>Citation</h3><button class="small-button" id="copy-citation">Copy BibTeX</button></div><p><a href="https://arxiv.org/abs/2609.37793" target="_blank" rel="noopener">arXiv:2609.37793</a> · 2026.</p><pre id="bibtex">@misc{chen2026mvgwammultipleviewgeometryaware,
   title = {MVG-WAM: Multiple View Geometry-Aware
            World-Action Modeling for Robotic Manipulation},
-  author = {Chen, Wenbo and Li, Tianfu and Xu, Haoxuan
-            and Cao, Zhihao and Chen, Zhenghan and Zhu, Zhengming
-            and Luo, Zizhou and Yang, Guosheng and Liu, Yuan
-            and Wang, Lujia and Chen, Wen and Li, Haoang},
-  note = {Manuscript},
-  url = {https://bobc-123.github.io/MVG-WAM/}
+  author = {Wenbo Chen and Tianfu Li and Haoxuan Xu
+            and Zhihao Cao and Zhenghan Chen and Zhengming Zhu
+            and Zizhou Luo and Guosheng Yang and Yuan Liu
+            and Lujia Wang and Wen Chen and Haoang Li},
+  year = {2026},
+  eprint = {2609.37793},
+  archivePrefix = {arXiv},
+  primaryClass = {cs.RO},
+  url = {https://arxiv.org/abs/2609.37793}
 }</pre><p id="copy-status" class="copy-status" role="status" aria-live="polite"></p></div></section>
 </main>
 <footer class="footer wrap"><a class="brand" href="#main">MVG<span class="brand-dash">-</span>WAM</a><p>Multiple views. Shared geometry. Robotic action.</p><a href="#main">Back to top</a></footer>

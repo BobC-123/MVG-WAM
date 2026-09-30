@@ -44,9 +44,10 @@ The simulation task names are not supplied in the slide text. The page uses numb
 
 ## Paper assets
 
-- `assets/MVG-WAM.pdf` is the supplied root-level `[ICRA-27] MVG-WAM.pdf` (8 pages). The LaTeX subdirectory's `root.pdf` is an unrelated 3-page IEEE example and is not used.
+- All public paper links on the website and in the README point to [the arXiv PDF](https://arxiv.org/pdf/2609.37793); the [arXiv abstract page](https://arxiv.org/abs/2609.37793) provides the public paper record.
+- `assets/MVG-WAM.pdf` is the originally supplied anonymous root-level `[ICRA-27] MVG-WAM.pdf` (8 pages), retained as a source asset and no longer linked from the website or README. The LaTeX subdirectory's `root.pdf` is an unrelated 3-page IEEE example and is not used.
 - `architecture.webp` is rendered from the final `figures/2.5.pdf`.
 - `prediction.webp` is rendered from the final `figures/4.7.pdf`.
 - Older figure iterations remain in the original source directory and are not served by this site.
 
-The supplied PDF remains anonymous. The public webpage, citation, and repository README use the author list and affiliations supplied by the project owner on 2026-09-29. The code release is announced as forthcoming; this page does not assert a publication year, acceptance, arXiv identifier, or an already released model/code package.
+The public webpage and repository README use the author list and affiliations supplied by the project owner on 2026-09-29. On 2026-09-30, the title, author order, 2026 date, arXiv identifier `2609.37793`, category `cs.RO`, and BibTeX were verified against the public arXiv record and its citation export. The citations on the website and in the README use that metadata. The code release remains forthcoming; no conference acceptance or released model/code package is claimed.
